@@ -104,6 +104,9 @@ VALUES
 INSERT INTO ImgProyects (ImgProyectUrl, ProyectId)
 VALUES
     ('proyect1.jpg', 1),
+    ('proyect2.jpg', 1),
+    ('proyect3.jpg', 1),
+    ('proyect1.jpg', 1),
     ('proyect2.jpg', 2),
     ('proyect3.jpg', 3),
     ('proyect4.jpg', 4),
@@ -111,5 +114,8 @@ VALUES
 
 
 select * from developers;
+
+select * from proyects where DeveloperId = 1;
+select * from ImgProyects INNER JOIN Proyects ON ImgProyects.ProyectId = Proyects.ProyectId;
 
 
