@@ -1,4 +1,3 @@
-drop database portfolio;
 create database portfolio;
 use portfolio;
 -- Tabla de desarrolladores 
@@ -65,27 +64,29 @@ VALUES
 INSERT INTO Proyects (ProyectName,ProyectDescriptionShort,ProyectDescriptionLarge, DeveloperId)
 VALUES
     ('Sistema de Control de Incidencias', 'Propuesta de un sistema de control de incidencias para el Senado de la República','Se creo principalmente debido a una necesidad que existe actualmente en el senado de la república, ya que los funcionarios se comunican principalmente por medios informales(Telefono, whatsapp), y los altos mandos necesitaban controlar cuando se creaba una incidencia, quien la creo y sus respectivos informes de creacion, en proceso y término.', 1),
-    ('Sistema de Control de Incidencias', 'Building a scalable e-commerce platform with advanced features.', 1),
-    ('Sistema de Control de Incidencias', 'Building a scalable e-commerce platform with advanced features.', 1),
-    ('Sistema de Control de Incidencias', 'Building a scalable e-commerce platform with advanced features.', 1);
+    ('Sistema de Control de Incidencias','Site' ,'Building a scalable e-commerce platform with advanced features.', 1);
 
 -- Insertar registros en la tabla Technologies
 INSERT INTO Technologies (TechnologyName, TechnologyImg, DeveloperId)
 VALUES
-    ('React.js', 'react_logo.png', 1),
-    ('Node.js', 'nodejs_logo.png', 1),
-    ('Angular', 'angular_logo.png', 2),
-    ('Python', 'python_logo.png', 3),
-    ('Java', 'java_logo.png', 4);
+    ('Angular', '../../assets/img/tecnologies/angular.png', 1),
+    ('React', '../../assets/img/tecnologies/react.png', 1),
+    ('Node.js', '../../assets/img/tecnologies/nodejs.png', 1),
+    ('Express', '../../assets/img/tecnologies/express.png', 1),
+    ('MySQL', '../../assets/img/tecnologies/mysql.png', 1),
+    ('PostgreSQL', '../../assets/img/tecnologies/postgresql.png', 1),
+    ('Sass', '../../assets/img/tecnologies/sass.png', 1),
+    ('Javascript', '../../assets/img/tecnologies/javascript.png', 1),
+    ('Git', '../../assets/img/tecnologies/git.png', 1),
+    ('Wordpress', '../../assets/img/tecnologies/wordpress.png', 1);
 
 -- Insertar registros en la tabla SocialNetworks
 INSERT INTO SocialNetworks (SocialNetworkName, SocialNetworkUrl, DeveloperId)
 VALUES
-    ('Twitter', 'https://twitter.com/johndoe', 1),
-    ('LinkedIn', 'https://www.linkedin.com/in/alicesmith', 2),
-    ('GitHub', 'https://github.com/bobjohnson', 3),
-    ('Instagram', 'https://www.instagram.com/emmamiller', 4),
-    ('Facebook', 'https://www.facebook.com/danielbrown', 5);
+    ('LinkedIn', 'https://www.linkedin.com/in/ignacio-alvarado-marzan/', 1),
+    ('GitHub', 'https://github.com/NASH99', 1),
+    ('Instagram', 'https://www.instagram.com/solo_nash', 1),
+    ('Facebook', 'https://www.facebook.com/ignacio.alvarado.marzan/', 1);
 
 -- Insertar registros en la tabla ImgUsers
 INSERT INTO ImgUsers (ImgUserUrl, DeveloperId)
@@ -109,9 +110,9 @@ VALUES
     ('proyect5.jpg', 5);
 
 
-select * from developers;
+select * from Developers;
 
-select * from proyects where DeveloperId = 1;
+select * from Proyects where DeveloperId = 1;
 
 select * from ImgProyects INNER JOIN Proyects ON ImgProyects.ProyectId = Proyects.ProyectId where DeveloperId = 1;
 
