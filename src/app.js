@@ -1,5 +1,6 @@
 import express from "express";
 import { getDevelopers, getDeveloper , getProyects, getProyect} from "./database.js";
+import { getTechnologies } from "./controllers/technologies.controller.js";
 
 const app = express();
 
@@ -21,6 +22,12 @@ app.get("/proyects/:id", async (req, res) =>{
     const ProyectId = req.params.id;
     const Proyects = await getProyect(ProyectId);
     res.json(Proyects);
+})
+
+app.get("/technologies/:id", async (req, res) =>{
+    const TechnologiesId = req.params.id;
+    const Technologies = await getTechnologies(TechnologiesId);
+    res.json(Technologies);
 })
 
 app.use((err, req, res, next)=>{

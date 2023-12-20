@@ -15,7 +15,8 @@ CREATE TABLE Developers (
 CREATE TABLE Proyects (
     ProyectId INT AUTO_INCREMENT PRIMARY KEY,
 	ProyectName VARCHAR(1000),
-    ProyectDescription VARCHAR(5000),
+    ProyectDescriptionShort VARCHAR(5000),
+    ProyectDescriptionLarge VARCHAR(10000),
     DeveloperId int,
     FOREIGN KEY (DeveloperId) REFERENCES Developers(DeveloperId)
 );
@@ -58,20 +59,15 @@ CREATE TABLE ImgProyects (
 -- Insertar registros en la tabla Developers
 INSERT INTO Developers (DeveloperName, DeveloperLastName, DeveloperBorn, DeveloperNationality, DeveloperDescriptionShort, DeveloperDescriptionLarge)
 VALUES
-    ('John', 'Doe', '1990-05-15', 'American', 'Passionate developer', 'Experienced full-stack developer with a focus on web technologies.'),
-    ('Alice', 'Smith', '1985-08-22', 'British', 'Creative coder', 'Front-end developer with a keen eye for design and user experience.'),
-    ('Bob', 'Johnson', '1988-11-10', 'Canadian', 'Tech enthusiast', 'Software engineer specializing in backend development and cloud technologies.'),
-    ('Emma', 'Miller', '1995-03-28', 'Australian', 'Innovative programmer', 'AI and machine learning researcher with a background in computer science.'),
-    ('Daniel', 'Brown', '1992-07-03', 'German', 'Coding wizard', 'Passionate about open source and contributing to the developer community.');
+    ('Ignacio', 'Alvarado', '1999-07-14', 'Chile', 'Passionate developer', 'Experienced full-stack developer with a focus on web technologies.');
 
 -- Insertar registros en la tabla Proyects
-INSERT INTO Proyects (ProyectName, ProyectDescription, DeveloperId)
+INSERT INTO Proyects (ProyectName,ProyectDescriptionShort,ProyectDescriptionLarge, DeveloperId)
 VALUES
-    ('E-commerce Platform', 'Building a scalable e-commerce platform with advanced features.', 1),
-    ('Social Media App', 'Developing a social media app with real-time updates and interactive features.', 2),
-    ('Financial Analytics Tool', 'Creating a tool for financial analysts to analyze market trends and data.', 3),
-    ('Healthcare Management System', 'Designing a system to manage patient records and healthcare data securely.', 4),
-    ('Online Learning Platform', 'Building a platform for online education with interactive courses.', 5);
+    ('Sistema de Control de Incidencias', 'Propuesta de un sistema de control de incidencias para el Senado de la República','Se creo principalmente debido a una necesidad que existe actualmente en el senado de la república, ya que los funcionarios se comunican principalmente por medios informales(Telefono, whatsapp), y los altos mandos necesitaban controlar cuando se creaba una incidencia, quien la creo y sus respectivos informes de creacion, en proceso y término.', 1),
+    ('Sistema de Control de Incidencias', 'Building a scalable e-commerce platform with advanced features.', 1),
+    ('Sistema de Control de Incidencias', 'Building a scalable e-commerce platform with advanced features.', 1),
+    ('Sistema de Control de Incidencias', 'Building a scalable e-commerce platform with advanced features.', 1);
 
 -- Insertar registros en la tabla Technologies
 INSERT INTO Technologies (TechnologyName, TechnologyImg, DeveloperId)
@@ -116,6 +112,8 @@ VALUES
 select * from developers;
 
 select * from proyects where DeveloperId = 1;
-select * from ImgProyects INNER JOIN Proyects ON ImgProyects.ProyectId = Proyects.ProyectId;
 
+select * from ImgProyects INNER JOIN Proyects ON ImgProyects.ProyectId = Proyects.ProyectId where DeveloperId = 1;
+
+select * from Technologies where DeveloperId = 1;
 
