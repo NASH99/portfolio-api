@@ -1,7 +1,6 @@
 import express from "express";
 
-import { getDevelopers } from "./controllers/developers.controller.js";
-import { getProyect } from "./controllers/proyects.controller.js";
+import { getDevelopers , getDeveloper} from "./controllers/developers.controller.js";
 import { getTechnologies } from "./controllers/technologies.controller.js";
 
 import dotenv from 'dotenv';
@@ -25,6 +24,12 @@ const PORT = process.env.PORT;
 
 router.get("/developers", async (req, res) => {
     const developers = await getDevelopers()
+    res.json(developers)
+});
+
+router.get("/developers/:id", async (req, res) => {
+    const DeveloperId = req.params.id;
+    const developers = await getDeveloper(DeveloperId)
     res.json(developers)
 });
 
